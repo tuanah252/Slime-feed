@@ -10,11 +10,16 @@ public class OnDrag : MonoBehaviour
     public ParticleSystem particleSystemPrefab;
     private bool check;
     Vector3 offset;
+    private Vector2 screenPoint;gggi
     private object collision;
+    void Update()
+    {
+        screenPoint = transform.position;
+    }
     private void OnDestroy()
     {
 
-        Instantiate(particleSystemPrefab, transform.position, Quaternion.identity);
+        Instantiate(particleSystemPrefab, screenPoint, Quaternion.identity);
 
     }
 

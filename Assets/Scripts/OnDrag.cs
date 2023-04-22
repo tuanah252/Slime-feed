@@ -7,9 +7,16 @@ public class OnDrag : MonoBehaviour
 
 
     // Start is called before the first frame update
+    public ParticleSystem particleSystemPrefab;
     private bool check;
     Vector3 offset;
     private object collision;
+    private void OnDestroy()
+    {
+
+        Instantiate(particleSystemPrefab, transform.position, Quaternion.identity);
+
+    }
 
     void OnMouseDown()
     {
